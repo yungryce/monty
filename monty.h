@@ -12,7 +12,7 @@
  * @arg: value
  * @stream: pointer to monty file
  * @line: line content
- * @lifi: flag change stack <-> queue
+ * @ret: flag change stack <-> queue
  * @count: line number
  * Description: carries values through the program
  */
@@ -21,7 +21,7 @@ typedef struct data_s
 	char *arg;
 	FILE *stream;
 	char *line;
-	int lifi;
+	int ret;
 	int count;
 }  data_t;
 extern data_t data;

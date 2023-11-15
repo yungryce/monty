@@ -9,7 +9,7 @@ void f_stack(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
-	data.lifi = 0;
+	data.ret = 0;
 }
 
 /**
@@ -22,5 +22,5 @@ void f_queue(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
-	data.lifi = 1;
+	data.ret = 1;
 }

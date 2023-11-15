@@ -13,7 +13,7 @@ void f_push(stack_t **head, unsigned int counter)
 	(void) counter;
 
 	n = str_convert(&data, head);
-	if (data.lifi == 0)
+	if (data.ret == 0)
 		addnode(head, n);
 	else
 		addqueue(head, n);
