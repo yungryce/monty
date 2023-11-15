@@ -79,6 +79,7 @@ void (*get_builtin(char *op))(stack_t **stack, unsigned int counter)
 	instruction_t funcs[] = {
 		{"push", f_push},
 		{"pall", f_pall},
+		{"pint", f_pint},
 		{NULL, NULL}
 	};
 

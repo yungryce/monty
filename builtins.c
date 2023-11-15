@@ -39,3 +39,20 @@ void f_pall(stack_t **head, unsigned int counter)
 		h = h->next;
 	}
 }
+
+#include "monty.h"
+/**
+ * f_pint - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+ */
+void f_pint(stack_t **head, unsigned int counter)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
+		error_exit(&data, head);
+	}
+	printf("%d\n", (*head)->n);
+}
