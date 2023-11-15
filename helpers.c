@@ -39,7 +39,6 @@ void error_exit(data_t *data, stack_t **stack)
 */
 int str_convert(data_t *data, stack_t **stack)
 {
-	int flag = 0;
 	char *temp;
 
 	if (data->arg)
@@ -51,14 +50,13 @@ int str_convert(data_t *data, stack_t **stack)
 		while (*temp)
 		{
 			if (*temp < '0' || *temp > '9')
-				flag = 1;
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", data->count);
+				error_exit(data, stack);
+			}
 			temp++;
 		}
-		if (flag)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", data->count);
-			error_exit(data, stack);
-		}
+
 		return (atoi(data->arg));
 	}
 	else
