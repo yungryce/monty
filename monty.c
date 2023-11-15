@@ -33,8 +33,8 @@ int main(int argc, char **argv)
 		data.count++;
 		parser(&data, &stack);
 	}
-
 	free(data.line);
+	free_stack(&stack);
 	fclose(data.stream);
 	return (EXIT_SUCCESS);
 }

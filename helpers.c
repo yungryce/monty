@@ -33,27 +33,32 @@ void error_exit(data_t *data, stack_t **stack)
 
 /**
  * str_convert - converts string to int
+ * @str: Integer string
  * @data: data of program
  * @stack: head to DLL
  * Return: integer
 */
 int str_convert(data_t *data, stack_t **stack)
 {
-	char *temp = data->arg;
+	int flag = 0;
+	char *temp;
 
-	if (temp)
+	if (data->arg)
 	{
+		temp = data->arg;
 		if (*temp == '-')
 			temp++;
 
 		while (*temp)
 		{
 			if (*temp < '0' || *temp > '9')
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", data->count);
-				error_exit(data, stack);
-			}
+				flag = 1;
 			temp++;
+		}
+		if (flag)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", data->count);
+			error_exit(data, stack);
 		}
 		return (atoi(data->arg));
 	}
