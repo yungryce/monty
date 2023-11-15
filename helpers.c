@@ -33,7 +33,6 @@ void error_exit(data_t *data, stack_t **stack)
 
 /**
  * str_convert - converts string to int
- * @str: Integer string
  * @data: data of program
  * @stack: head to DLL
  * Return: integer
