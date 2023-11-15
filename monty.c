@@ -51,7 +51,7 @@ int parser(data_t *data, stack_t **stack)
 	void (*builtin)(stack_t **stack, unsigned int counter);
 	char *op = strtok(data->line, " \n\t");
 
-	if (!op || op[0] == '#')
+	if (!op || (op && op[0] == '#'))
 		return (0);
 
 	builtin = get_builtin(op);
