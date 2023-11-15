@@ -80,6 +80,7 @@ void (*get_builtin(char *op))(stack_t **stack, unsigned int counter)
 		{"push", f_push},
 		{"pall", f_pall},
 		{"pint", f_pint},
+		{"pop", f_pop},
 		{NULL, NULL}
 	};
 
