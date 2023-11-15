@@ -59,7 +59,7 @@ int str_convert(data_t *data, stack_t **stack)
 	}
 	else
 	{
-		fprintf(stderr, "vimL%d: usage: push integer\n", data->count);
+		fprintf(stderr, "L%d: usage: push integer\n", data->count);
 		error_exit(data, stack);
 	}
 	return (0);
