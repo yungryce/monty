@@ -1,12 +1,45 @@
-0x19. C - Stacks, Queues - LIFO, FIFO
-=====================================
+<p align="center">
+  <img src="https://img.shields.io/badge/C-Language-blue" alt="C Language">
+  <img src="https://img.shields.io/badge/Data_Structures-Stack_Queue-green" alt="Data Structures">
+  <img src="https://img.shields.io/badge/Interpreter-Monty_0.98-orange" alt="Interpreter">
+  <img src="https://img.shields.io/badge/Brainf*ck-Integration-red" alt="Brainf*ck">
+  <img src="https://img.shields.io/badge/Status-Complete-brightgreen" alt="Status">
+</p>
 
--   By Julien Barbier
+<div align="center">
+  <h1>🖥️ Monty Interpreter</h1>
+  <p><em>A complete stack and queue interpreter for Monty 0.98 bytecode with Brainf*ck integration</em></p>
+</div>
 
-![](https://pbs.twimg.com/media/CFYYWy6UEAE9Ow-.png)
+---
 
-Resources
----------
+## 📋 Table of Contents
+- [📖 Overview](#-overview)
+- [🎯 Learning Objectives](#-learning-objectives)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
+- [💡 Usage](#-usage)
+- [🏆 Key Features](#-key-features)
+- [📚 Resources](#-resources)
+- [👥 Contributors](#-contributors)
+
+## 📖 Overview
+The Monty Interpreter is a comprehensive implementation of a stack and queue-based programming language interpreter, designed as part of the ALX Software Engineering Program's low-level programming specialization. This project demonstrates advanced systems programming skills through the creation of a complete bytecode interpreter that supports both LIFO (stack) and FIFO (queue) operations with dynamic mode switching.
+
+The interpreter processes Monty 0.98 bytecode files, executing a rich set of instructions including arithmetic operations, stack manipulation, I/O operations, and advanced features like Brainf*ck language integration. This project showcases expertise in language design, data structure implementation, memory management, and robust error handling in C programming.
+
+## 🎯 Learning Objectives
+- **Data Structure Mastery**: Implement and understand stack (LIFO) and queue (FIFO) operations
+- **Interpreter Design**: Build a complete language interpreter from scratch
+- **Memory Management**: Master dynamic memory allocation and cleanup in C
+- **File Processing**: Handle command-line arguments and file I/O operations
+- **Error Handling**: Implement comprehensive error detection and reporting
+- **Language Integration**: Develop Brainf*ck language interpreter capabilities
+- **Systems Programming**: Apply low-level programming concepts in practical applications
+- **Code Organization**: Structure large C projects with modular design principles
+- **Algorithm Implementation**: Translate theoretical concepts into working code
+- **Professional Development**: Follow industry standards for code quality and documentation
 
 **Read or watch**:
 
@@ -134,251 +167,6 @@ julien@ubuntu:~/monty$
 
 Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account:
 
-```
-julien@ubuntu:~/monty$ cat -e bytecodes/001.m
-push 0 Push 0 onto the stack$
-push 1 Push 1 onto the stack$
-$
-push 2$
-  push 3$
-                   pall    $
-$
-$
-                           $
-push 4$
-$
-    push 5    $
-      push    6        $
-$
-pall This is the end of our program. Monty is awesome!$
-julien@ubuntu:~/monty$
+---
 
-```
-
-**The monty program**
-
--   Usage: `monty file`
-    -   where `file` is the path to the file containing Monty byte code
--   If the user does not give any file or more than one argument to your program, print the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
--   If, for any reason, it's not possible to open the file, print the error message `Error: Can't open file <file>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-    -   where `<file>` is the name of the file
--   If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-    -   where is the line number where the instruction appears.
-    -   Line numbers always start at 1
--   The monty program runs the bytecodes line by line and stop if either:
-    -   it executed properly every line of the file
-    -   it finds an error in the file
-    -   an error occured
--   If you can't malloc anymore, print the error message `Error: malloc failed`, followed by a new line, and exit with status `EXIT_FAILURE`.
--   You have to use `malloc` and `free` and are not allowed to use any other function from `man malloc` (realloc, calloc, ...)
-
-
-
-Tasks
------
-
-### 0\. push, pall
-
-mandatory
-
-Implement the `push` and `pall` opcodes.
-
-**The push opcode**
-
-The opcode `push` pushes an element to the stack.
-
--   Usage: `push <int>`
-    -   where `<int>` is an integer
--   if `<int>` is not an integer or if there is no argument given to `push`, print the error message `L<line_number>: usage: push integer`, followed by a new line, and exit with the status `EXIT_FAILURE`
-    -   where is the line number in the file
--   You won't have to deal with overflows. Use the `atoi` function
-
-**The pall opcode**
-
-The opcode `pall` prints all the values on the stack, starting from the top of the stack.
-
--   Usage `pall`
--   Format: see example
--   If the stack is empty, don't print anything
-
-```
-julien@ubuntu:~/monty$ cat -e bytecodes/00.m
-push 1$
-push 2$
-push 3$
-pall$
-julien@ubuntu:~/monty$ ./monty bytecodes/00.m
-3
-2
-1
-julien@ubuntu:~/monty$
-
-```
-
-**Repo:**
-
--   GitHub repository: `monty`
-
-### 1\. pint
-
-mandatory
-
-Implement the `pint` opcode.
-
-**The pint opcode**
-
-The opcode `pint` prints the value at the top of the stack, followed by a new line.
-
--   Usage: `pint`
--   If the stack is empty, print the error message `L<line_number>: can't pint, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
-
-```
-julien@ubuntu:~/monty$ cat bytecodes/06.m
-push 1
-pint
-push 2
-pint
-push 3
-pint
-julien@ubuntu:~/monty$ ./monty bytecodes/06.m
-1
-2
-3
-julien@ubuntu:~/monty$
-
-```
-
-**Repo:**
-
--   GitHub repository: `monty`
-
-### 2\. pop
-
-mandatory
-
-Implement the `pop` opcode.
-
-**The pop opcode**
-
-The opcode `pop` removes the top element of the stack.
-
--   Usage: `pop`
--   If the stack is empty, print the error message `L<line_number>: can't pop an empty stack`, followed by a new line, and exit with the status `EXIT_FAILURE`
-
-```
-julien@ubuntu:~/monty$ cat bytecodes/07.m
-push 1
-push 2
-push 3
-pall
-pop
-pall
-pop
-pall
-pop
-pall
-julien@ubuntu:~/monty$ ./monty bytecodes/07.m
-3
-2
-1
-2
-1
-1
-julien@ubuntu:~/monty$
-
-```
-
-**Repo:**
-
--   GitHub repository: `monty`
-
-### 3\. swap
-
-mandatory
-
-Implement the `swap` opcode.
-
-**The swap opcode**
-
-The opcode `swap` swaps the top two elements of the stack.
-
--   Usage: `swap`
--   If the stack contains less than two elements, print the error message `L<line_number>: can't swap, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
-
-```
-julien@ubuntu:~/monty$ cat bytecodes/09.m
-push 1
-push 2
-push 3
-pall
-swap
-pall
-julien@ubuntu:~/monty$ ./monty bytecodes/09.m
-3
-2
-1
-2
-3
-1
-julien@ubuntu:~/monty$
-
-```
-
-**Repo:**
-
--   GitHub repository: `monty`
-
-### 4\. add
-
-mandatory
-
-Implement the `add` opcode.
-
-**The add opcode**
-
-The opcode `add` adds the top two elements of the stack.
-
--   Usage: `add`
--   If the stack contains less than two elements, print the error message `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
--   The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-    -   The top element of the stack contains the result
-    -   The stack is one element shorter
-
-```
-julien@ubuntu:~/monty$ cat bytecodes/12.m
-push 1
-push 2
-push 3
-pall
-add
-pall
-
-julien@ubuntu:~/monty$ ./monty bytecodes/12.m
-3
-2
-1
-5
-1
-julien@ubuntu:~/monty$
-
-```
-
-**Repo:**
-
--   GitHub repository: `monty`
-
-### 5\. nop
-
-mandatory
-
-Implement the `nop` opcode.
-
-**The nop opcode**
-
-The opcode `nop` doesn't do anything.
-
--   Usage: `nop`
-
-**Repo:**
-
--   GitHub repository: `monty`
+*This project demonstrates comprehensive mastery of systems programming, data structures, language implementation, and professional software development practices essential for advanced software engineering roles.*

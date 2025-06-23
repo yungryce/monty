@@ -1,0 +1,141 @@
+{
+  "project_identity": {
+    "name": "monty",
+    "type": "educational",
+    "scope": "systems",
+    "is_independent": true,
+    "version": "1.0.0",
+    "description": "A Monty 0.98 stack and queue interpreter implementing a domain-specific language for stack and queue operations with comprehensive Brainf*ck integration and bytecode execution",
+    "curriculum_stage": "intermediate",
+    "related_projects": ["binary_trees", "simple_shell", "sorting_algorithms"]
+  },
+  "tech_stack": {
+    "primary_language": "c",
+    "languages": ["c", "brainf*ck"],
+    "frameworks_libraries": [],
+    "tools": ["gcc", "make", "valgrind", "gdb"],
+    "paradigms": ["procedural", "interpreter_design", "stack_based_execution"],
+    "concepts": ["stacks", "queues", "interpreters", "bytecode", "language_design"]
+  },
+  "skill_manifest": {
+    "technical_skills": [
+      "Stack and Queue Implementation",
+      "Interpreter Design and Development",
+      "Bytecode Execution Engine",
+      "Brainf*ck Language Integration",
+      "Memory Management for Data Structures",
+      "Command Line Argument Processing",
+      "File I/O and Stream Handling",
+      "Error Handling and Validation",
+      "Domain-Specific Language Implementation",
+      "Abstract Data Type Design"
+    ],
+    "learning_objectives": [
+      "Understand LIFO (Last In, First Out) and FIFO (First In, First Out) principles",
+      "Implement stack and queue data structures in C",
+      "Design and build a language interpreter from scratch",
+      "Master bytecode execution and instruction processing",
+      "Learn domain-specific language (DSL) design principles",
+      "Apply proper memory management in dynamic data structures",
+      "Handle file processing and command-line interfaces",
+      "Implement comprehensive error handling and validation"
+    ],
+    "competency_areas": {
+      "data_structures": ["stacks", "queues", "linked_lists", "dynamic_allocation"],
+      "language_design": ["interpreters", "bytecode", "instruction_set", "parsing"],
+      "systems_programming": ["file_io", "memory_management", "command_line", "error_handling"],
+      "algorithms": ["stack_operations", "queue_operations", "string_processing", "validation"]
+    }
+  },
+  "educational_context": {
+    "program": "ALX Software Engineering",
+    "specialization": "Low-Level Programming & Algorithms",
+    "difficulty_level": "intermediate",
+    "prerequisites": ["C programming", "data structures", "memory management", "file I/O"],
+    "estimated_hours": 40,
+    "key_concepts": [
+      "Stack (LIFO) operations and applications",
+      "Queue (FIFO) operations and applications",
+      "Interpreter design patterns",
+      "Bytecode execution models",
+      "Memory management for dynamic structures",
+      "Error handling in system software"
+    ]
+  },
+  "project_structure": {
+    "main_files": [
+      "monty.h",
+      "monty.c"
+    ],
+    "implementation_files": [
+      "builtins1.c",
+      "builtins2.c", 
+      "builtins3.c",
+      "builtins4.c",
+      "helpers.c",
+      "lists.c"
+    ],
+    "test_files": [
+      "checker/",
+      "tester/"
+    ],
+    "special_features": [
+      "bf/",
+      "monty"
+    ]
+  },
+  "features": {
+    "core": [
+      "Stack operations (push, pop, pall, pint)",
+      "Queue operations (queue, stack mode switching)",
+      "Arithmetic operations (add, sub, mul, div, mod)",
+      "Comparison and logical operations",
+      "File processing and bytecode execution",
+      "Comprehensive error handling and validation"
+    ],
+    "advanced": [
+      "Brainf*ck language interpreter integration",
+      "Dynamic mode switching between stack and queue",
+      "Memory-efficient linked list implementation",
+      "Robust command-line interface",
+      "Advanced string and character manipulation",
+      "Modular bytecode instruction system"
+    ]
+  },
+  "interpreter_features": {
+    "instruction_set": [
+      "push", "pall", "pint", "pop", "swap", "add", "nop",
+      "sub", "div", "mul", "mod", "pchar", "pstr",
+      "rotl", "rotr", "stack", "queue"
+    ],
+    "brainf*ck_ops": [
+      ">", "<", "+", "-", ".", ",", "[", "]"
+    ],
+    "error_handling": [
+      "Invalid instructions",
+      "Stack underflow/overflow",
+      "Division by zero",
+      "Invalid characters",
+      "File access errors"
+    ]
+  },
+  "assessment_criteria": {
+    "code_quality": ["betty_style", "memory_leaks", "edge_cases", "error_handling"],
+    "functionality": ["correct_interpretation", "proper_stack_queue_behavior", "brainf*ck_integration"],
+    "understanding": ["interpreter_design", "data_structure_implementation", "language_concepts"]
+  },
+  "career_preparation": {
+    "industry_relevance": "Essential for compiler design, virtual machines, and language implementation",
+    "job_roles": ["Systems Engineer", "Compiler Engineer", "Language Designer", "Virtual Machine Developer"],
+    "interview_topics": ["Stack/Queue problems", "Interpreter design", "Language implementation"],
+    "real_world_applications": ["Virtual machines", "Expression evaluation", "Undo/Redo systems", "Browser history"]
+  },
+  "metadata": {
+    "created": "2024-02-01",
+    "last_updated": "2025-06-23",
+    "version": "1.0.0",
+    "maintainer": "Chigbu Joshua",
+    "license": "ALX Educational License",
+    "educational_program": "ALX Software Engineering"
+  }
+}
